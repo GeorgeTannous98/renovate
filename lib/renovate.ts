@@ -16,7 +16,7 @@ proxy.bootstrap();
 (async (): Promise<void> => {
   process.exitCode = await instrument('run', () => globalWorker.start());
   await telemetryShutdown(); //gracefully shutdown OpenTelemetry
-
+  logger.debug("George");
   // istanbul ignore if
   if (process.env.RENOVATE_X_HARD_EXIT) {
     process.exit(process.exitCode);
